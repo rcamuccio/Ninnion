@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Planning an Observation}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Check the weather and sky conditions}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Identify your target}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Plan your observing strategy}{4}{subsection.1.3}
+\contentsline {section}{\numberline {2}Starting Up}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Entry and Power Up}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Open Shutter Window}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Open Shutter Door}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Prepare Telescope}{5}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Prepare Camera}{6}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Connect to Mount}{6}{subsection.2.6}
+\contentsline {section}{\numberline {3}Observing}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Set up directory structure}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Set up autosave routine}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Monitor conditions throughout night}{7}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Take calibration frames}{8}{subsection.3.4}
+\contentsline {section}{\numberline {4}Shutting Down}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Disconnect from telescope}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Disconnect from camera}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Cover the telescope}{9}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Close shutter door}{9}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Close shutter window}{10}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Power Down and Exit}{10}{subsection.4.6}
