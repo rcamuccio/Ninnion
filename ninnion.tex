@@ -12,7 +12,7 @@
 
 \title{Ninnion: The Observer's Operation Manual}
 \author{CTMO}
-\date{v 2019-07-15}
+\date{v 3020-02-24}
 
 % Contributing authors
 %	Richard Camuccio
@@ -211,26 +211,34 @@
 				
 			\end{enumerate}
 		
+		\subsection{Connect to EFA Kit}
+		
+			\begin{enumerate}
+				
+				\item Open PWI3. Verify the computer established connection to the electronic focus assembly (EFA). The EFA should connect automatically to the computer and begin cooling the OTA and primary mirror. You should hear the fans turn on.
+				
+				\item Click the \texttt{Temperature} tab on the right in PWI3. Record the ambient temperature given by the display.
+								
+			\end{enumerate}
+		
 		\subsection{Prepare Camera}
 		
 			\begin{enumerate}
 				
-				\item Open MaxIm DL
+				\item Open MaxIm DL.
 							
 				\item Connect to camera. Under \texttt{View}, open the \texttt{Camera Control Window}. Select \texttt{Setup} and then \texttt{Connect} to enable computer connection to the camera.
 				
-				\item Cool camera. Click \texttt{Cooler} and set the set point. It is advisable to limit the set point to no more than 40 degrees C relative to the ambient temperature. For example, if the ambient temperature is 30 degrees C, then the set point should be no less than -10 degrees C.
+				\item Cool camera. Click \texttt{Cooler} and enter the set point. It is advisable to limit the initial set point to no more than 40 degrees C relative to the ambient temperature to avoid over-straining the thermoelectic coolers. For example, if the ambient temperature is 30 degrees C, then the set point should be no less than -10 degrees C.
 				
-				\item Under \texttt{Connect} select \texttt{On} to begin cooling the camera. The cooler power should not exceed 80\% during operation.
+				\item Under \texttt{Connect} select \texttt{On} to begin cooling the camera. The cooler power should not exceed 80\% during operation. If you find that the initial set point can be safely lowered more than the initial set point, you may do so in intervals until a sustained cooler power of 80\% is reached.
 				
 			\end{enumerate}
 		
 		\subsection{Connect to Mount}
 		
 			\begin{enumerate}
-				
-				\item Open PWI3. Verify the computer established connection to the electronic focus assembly (EFA). The EFA should connect automatically to the computer and begin cooling the OTA and primary mirror.
-				
+								
 				\item Open PWI4. Click \texttt{Connect} at the top left of the window.
 				
 				\item Click \texttt{Enable RA} and \texttt{Enable Dec} under \texttt{Connect}.
@@ -327,11 +335,13 @@
 			
 			\item In MaxIm DL, in the \texttt{Camera Control Window}, select \texttt{Setup} and then \texttt{Warm Up} to begin warming up the camera.
 			
-			\item Wait until the cooler power has dropped to 0\%, then select \texttt{Off} under \texttt{Setup} to turn off the camera cooler.
+			\item Wait until the cooler power has dropped to close to 0\% and the temperature of the chip is close to the ambient temperature. This might take a while, therefore you may continue with shutting down the rest of the observatory (up to, but not including, turning off the UPS battery backup) and then come back to this point.
+			
+			\item Select \texttt{Off} under \texttt{Setup} to turn off the camera cooler.
 			
 			\item Select \texttt{Disconnect} and then close MaxIm DL.
 			
-			\item Shut down the computer. Turn off the monitors.
+			\item Shut down the computer (allow for updates before shutting off power). Turn off the monitors.
 			
 		\end{enumerate}
 		
@@ -345,7 +355,7 @@
 			
 			\item Replace the round plastic lid onto the primary aperture.
 			
-			\item Replace the plastic shower cap.
+			\item Replace the plastic shower cap and use clips to fasten it.
 			
 			\item Replace the cloth cover onto the secondary mirror.
 			
