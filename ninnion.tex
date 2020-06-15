@@ -12,7 +12,7 @@
 
 \title{Ninnion: The Observer's Operation Manual}
 \author{CTMO}
-\date{v 24 Feb 2020}
+\date{v 15 Jun 2020}
 
 % Contributing authors
 %	Richard Camuccio
@@ -76,14 +76,14 @@
 						\includegraphics[scale=0.2]{detailed_forecast.png}
 					\end{figure}
 	
-					\item To the right of this you will see a map. Find the approximate location of Resaca de la Palma State Park and click it on the map. The page will reload. You should see the green square highlighting the region you just clicked. This action will reload the page. Scroll back down to the map to confirm the spot you clicked is now highlighted by the square.
+					\item To the right of this you will see a map. Find the approximate location of Resaca de la Palma State Park and click it on the map. The page will reload. You should see the green square highlighting the region you just clicked.
 		
 					\begin{figure}[h]
 						\centering
 						\includegraphics[scale=0.3]{green_square.png}
 					\end{figure}
 		
-					\item Immediately below this, click the graph titled \texttt{Hourly Weather Forecast}. This action takes you to a new page with the forecast in graphical form of the location you clicked. This page is extremely useful and, hence, it is recommended to bookmark this page for future reference.
+					\item Immediately below this, click the graph titled \texttt{Hourly Weather Forecast}. This action takes you to a new page with the forecast in graphical form of the location you clicked. This page is extremely useful and it is recommended to bookmark this page for future reference. You will want to monitor the changing conditions throughout the day before your observation. Typically, 50\% or greater cloud coverage is a sign that an observation is a no-go.
 		
 					\begin{figure}[h]
 						\centering
@@ -100,7 +100,7 @@
 		
 			\begin{enumerate}
 				
-				\item What are the coordinates of your object? Object coordinates are typically expressed in RA (\texttt{hh:mm:ss.ssss}) and Dec (\texttt{$\pm$dd:mm:ss.ssss}) in the J2000 epoch.
+				\item What are the coordinates of your object? Object coordinates are typically expressed in right ascension (\texttt{hh:mm:ss.ssss}) and declination (\texttt{$\pm$dd:mm:ss.ssss}) in the J2000 epoch.
 				
 				\item Check the altitude range over your expected observation time. For accurate photometry, you want to make sure your object is above 30 degrees in altitude. It's useful to visualize the path of the object in the sky ahead of time, using planetarium software like Stellarium.
 				
@@ -122,11 +122,11 @@
 					
 					\item Are you tracking a single object?
 					
-					\item Does the object move with proper motion or sidereal motion?
+					\item Does the object move with significant proper motion or only with sidereal motion?
 					
 				\end{enumerate}
 				
-				\item If you're planning to observe multiple objects, like a selection of galaxies, then you want to observe the galaxies that are scheduled to set first. That way you can observe the most amount of galaxies on your list at a suitable airmass coefficient.
+				\item If you're planning to observe multiple objects, like a selection of galaxies, then you want to observe the galaxies that are scheduled to set first. That way you can observe the most amount of galaxies on your list at a suitable air mass.
 				
 				\item If you're planning to observe a single target over time, then you'll need to plan the exposure time and cadence of your image sequence. This answer will depend on the nature of your target.
 				
@@ -137,6 +137,8 @@
 					\item Exoplanet transits can be quite faint and are at a fixed point in time.
 					
 					\item Variable stars have a wide variety of periods and magnitude changes.
+					
+					\item Filters, a significant Moon, and low altitude are examples of factors that reduce the signal-to-noise ratio (SNR) and change the color of your target.
 					
 				\end{enumerate}
 			
@@ -204,8 +206,6 @@
 				\item Remove the round plastic lid from the primary aperture.
 			
 				\item Slide the light shroud back down to completely enclose the OTA.
-	
-				\item Check that the RA and Dec brakes are removed.
 			
 				\item Turn on the mount.
 				
@@ -229,13 +229,9 @@
 							
 				\item Connect to camera. Under \texttt{View}, open the \texttt{Camera Control Window}. Select \texttt{Setup} and then \texttt{Connect} to enable computer connection to the camera.
 				
-				\item Cool camera. Click \texttt{Cooler} and enter the set point. It is advisable to limit the initial set point to no more than 40 degrees C relative to the ambient temperature to avoid over-straining the thermoelectic coolers. For example, if the ambient temperature is 30 degrees C, then the set point should be no less than -10 degrees C.
+				\item Cool camera. Click \texttt{Cooler} and enter the set point. It is advisable to limit the initial set point to no more than 40 degrees C relative to the ambient temperature to avoid over-straining the thermoelectic coolers. For example, if the ambient temperature is 30 degrees C, then the set point should be about -10 degrees C.
 				
-				\item Under \texttt{Connect} select \texttt{On} to begin cooling the camera. The cooler power should not exceed 80\% during operation. If you find that the initial set point can be safely lowered more than the initial set point, you may do so in intervals until a sustained cooler power of 80\% is reached.
-				
-				\item Open FLIFilter.
-				
-				\item Click the \texttt{Home} button. You can faintly hear the filter wheel turning. Once the status indicates it is at 'home' you can now select a filter to use for your observations.
+				\item Under \texttt{Connect} select \texttt{On} to begin cooling the camera. The cooler power should not exceed 80\% during operation.
 				
 			\end{enumerate}
 		
@@ -258,19 +254,48 @@
 	\newpage
 	\section{Observing}
 	
+	\subsection{Slewing the telescope}
+	
+		\begin{enumerate}
+			
+			\item In PWI4, under the \texttt{Goto} tab, enter the right ascension and declination of your intended object. Make sure the format is either sexagesimal (\texttt{hh:mm:ss.ssss} and \texttt{$\pm$dd:mm:ss.ssss}) or decimal (\texttt{dd.dddd} and \texttt{$\pm$dd.dddd}).
+			
+		\end{enumerate}
+	
+	\subsection{Taking a test exposure}
+	
+		\begin{enumerate}
+			
+			\item In MaxIm DL, under the \texttt{Expose} tab, select a ``Single'' exposure (under the \texttt{Start} button on the right).
+			
+			\item Select the filter under the \texttt{Filter Wheel} drop-down list.
+			
+			\item Enter an exposure time under \texttt{Seconds}.
+			
+			\item Subframes should be disabled, unless you're doing an observation that specifically needs them.
+			
+			\item Select the binning under the \texttt{X Binning} drop-down list. Binning should match the nightly atmospheric seeing, as well as chosen for balancing the SNR and resolution of your particular object. Higher binning means higher SNR per pixel, but at a loss of pixel resolution on the overall image.
+			
+			\item Additionally, in the \texttt{Options} menu, make sure that dark frames are not being automatically subtracted.
+			
+			\item Finally, once your telescope is settled on a target and your exposure parameters are set, click the \texttt{Start} button at the top right of the camera control window. The idle bar will begin to fill as the exposure commences. A picture should automatically render in MaxIm DL once the exposure is complete. First light!
+			
+		\end{enumerate}
+	
 	\subsection{Set up directory structure}
 	
 		\begin{enumerate}
 			
 			\item Under \texttt{C:\textbackslash Documents\textbackslash Observations} create a directory with the evening date in the format \texttt{yyyy-mm-dd}.
 			
-			\item Under the newly-made directory, create a directory called \texttt{dark}, a directory called \texttt{flat}, and a directory for each of your targets by name (e.g. for target exoplanet system HAT-P-7 the directory would be something like \texttt{hatp7}). See the diagram below for assistance. The directory structure for CTMO. The object file names should be a single, unbroken string of the object's name. The (g, 100) and (i, 10) are the filters and integration used for that particular object (you don't need to include this in the file name).
+			\item Under the newly-made directory, create a directory called \texttt{dark}, a directory called \texttt{flat}, and a directory for each of your targets by name (e.g. for target exoplanet system HAT-P-7 the directory would be something like \texttt{hatp7}). See Figure 1 for assistance.
 			
 		\end{enumerate}
 	
 		\begin{figure}[h]
 			\centering
 			\includegraphics[scale=0.5]{images/ctmo_format.png}
+			\caption{The directory structure for CTMO data. The object file names should be a single, unbroken string of the object's name. The (g, 100) and (i, 10) are the filters and exposure time used for that particular object (you don't need to include this in the file name).}
 		\end{figure}
 	
 	\subsection{Set up autosave routine}
@@ -283,7 +308,7 @@
 			
 			\item In the \texttt{Autosave Setup} window, set \texttt{Autosave Filename} to the name of your target.
 			
-			\item Make sure \texttt{Slot 1} is selected. Frame \texttt{Type} will be \texttt{Light}. Set your \texttt{Exposure}, \texttt{Binning}, and the number of exposures or \texttt{Repeat}.
+			\item Make sure \texttt{Slot 1} is selected. Frame \texttt{Type} will be \texttt{Light}. Set your \texttt{Filter}, \texttt{Exposure}, \texttt{Binning}, and the number of exposures or \texttt{Repeat}.
 			
 			\item Select \texttt{Options} and \texttt{Set Image Save Path...}. Under \texttt{Documents}, \texttt{Observations}, create a new directory with the current date (in \texttt{yyyy-mm-dd} format). Then, under this new directory, create a new subdirectory with the name of your target. Click \texttt{OK} to close this window.
 			
@@ -311,7 +336,7 @@
 			
 			\item Make sure the dome shutter window remains in line with the telescope pointing. At the time of writing, the dome rotation has not been integrated into the telescope motion.
 			
-			\item Make sure the data is being saved in the correct directory.
+			\item Make sure the data is being saved in the correct directory and recorded in the data log.
 			
 		\end{enumerate}
 		
