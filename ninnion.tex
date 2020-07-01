@@ -12,7 +12,7 @@
 
 \title{Ninnion: The Observer's Operation Manual}
 \author{CTMO}
-\date{v 15 Jun 2020}
+\date{v 1 Jul 2020}
 
 % Contributing authors
 %	Richard Camuccio
@@ -348,11 +348,11 @@
 			
 			\item In PWI4, select \texttt{Commands} and then click \texttt{Home mount}. The telescope will slew and locate its reference encoders.
 			
-			\item Click \texttt{Disable RA} and \texttt{Disable Dec} under \texttt{Connect}.
+			\item In PWI4, under the \texttt{Goto} tab, enter the right altitude and azimuth of the flatfield screen. Use an azimuth of 352 degrees and an altitude of 12 degrees. You will then need to slew the dome to center the flatfield screen in the telescope FOV.
 			
-			\item Set up flatfield panel, light source, and aperture cover on the telescope.
+			\item Connect the dimmer switch plug and press the dimmer switch knob to click it on. Next, turn the dimmer switch to produce some light and take a test exposure. This process will be iterative until the appropriate level is reached. The average pixel value across the frame should be roughly 50\% the saturation limit of the camera. For a 16-bit camera like the ProLine 16803, the saturation limit is 65535 counts.
 			
-			\item Take a series of at least 15 flats such that the average pixel value across the frame is roughly 30-50\% the saturation limit of the camera. For each filter used in an observation, a series of 15 flats per filter will be needed.
+			\item Take a series of at least 15 flats per filter used that night.
 			
 			\item Turn off lights and take a series of 15 dark frames. For each integration time used in an observation (including those of your flats), a series of 15 darks per integration time will be needed.
 			
@@ -364,8 +364,12 @@
 	\subsection{Disconnect from telescope}
 		
 		\begin{enumerate}
-					
-			\item In PWI4, click \texttt{Disconnect}.
+			
+			\item Make sure the area around the telescope is completely clear.
+			
+			\item In PWI4, select \texttt{Commands} and then click \texttt{Home mount}. The telescope will slew and locate its reference encoders.
+			
+			\item 
 			
 			\item In PWI3, select \texttt{Disconnect} at the top right of the window to turn off the OTA fans.
 			

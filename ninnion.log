@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.12)  15 JUN 2020 12:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.12)  1 JUL 2020 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,24 +440,24 @@ Package pdftex.def Info: images/ctmo_format.png  used on input line 297.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [8] [9 <./images/ctmo_format.png>] [10] [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 454.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 458.
  [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 454.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 458.
  (./ninnion.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 454.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 454.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 458.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 458.
 Package rerunfilecheck Info: File `ninnion.out' has not changed.
 (rerunfilecheck)             Checksum: 74E97F94E6EDD49A922059CD18C137C9;1838.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 454.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 6833 strings out of 481239
- 101173 string characters out of 5920377
- 374297 words of memory out of 5000000
+ 6835 strings out of 481239
+ 101189 string characters out of 5920377
+ 374296 words of memory out of 5000000
  21833 multiletter control sequences out of 15000+600000
  537889 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -469,10 +469,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ninnion.pdf (12 pages, 1213258 bytes).
+Output written on ninnion.pdf (12 pages, 1213348 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 343 compressed objects within 4 object streams
- 148 named destinations out of 1000 (max. 500000)
+ 384 PDF objects out of 1000 (max. 8388607)
+ 345 compressed objects within 4 object streams
+ 150 named destinations out of 1000 (max. 500000)
  252 words of extra memory for PDF output out of 10000 (max. 10000000)
 
