@@ -12,19 +12,19 @@
 
 \title{Ninnion: The Observer's Operation Manual}
 \author{CTMO}
-\date{v 1 Jul 2020}
+\date{v 22 Feb 2020}
 
 % Contributing authors
 %	Richard Camuccio
 %	Elizabeth Caputa
 %	Moises Castillo
+%   Wendy Mendoza
 %
 % Contributing observers
 %   Karina Hernandez
 %   Victor Hugo Rangel
 %   Tanya Llanas
 %   Abigail Martinez
-%   Wendy Mendoza
 %   Ivan Morado
 %   Martell Valencia
 %
@@ -233,6 +233,8 @@
 				
 				\item Under \texttt{Connect} select \texttt{On} to begin cooling the camera. The cooler power should not exceed 80\% during operation.
 				
+				\item Once the camera temperature stabilizes, take 10 bias frames on ``continuous'' (these don't need to be saved). Taking a quick set of bias frames will clear any residual charge stored from previous exposures on the CCD.
+				
 			\end{enumerate}
 		
 		\subsection{Connect to Mount}
@@ -276,6 +278,8 @@
 			
 			\item Select the binning under the \texttt{X Binning} drop-down list. Binning should match the nightly atmospheric seeing, as well as chosen for balancing the SNR and resolution of your particular object. Higher binning means higher SNR per pixel, but at a loss of pixel resolution on the overall image.
 			
+			\item If your image is out of focus, go to the \texttt{AF CONFIG} tab in PWI3. Take an image count (\texttt{Steps}) of 10 and set the exposure length (under \texttt{Seconds}) and binning (under \texttt{X Binning}) you will be using for your target. Under the tab \texttt{AF CONFIG}, click \texttt{START AF}, which will focus your images. Wait until all 10 images are done being processed.
+			
 			\item Additionally, in the \texttt{Options} menu, make sure that dark frames are not being automatically subtracted.
 			
 			\item Finally, once your telescope is settled on a target and your exposure parameters are set, click the \texttt{Start} button at the top right of the camera control window. The idle bar will begin to fill as the exposure commences. A picture should automatically render in MaxIm DL once the exposure is complete. First light!
@@ -307,6 +311,20 @@
 			\item In MaxIm DL, in the \texttt{Camera Control} window, under the \texttt{Expose} tab, click the \texttt{Autosave} button. A new window should appear called \texttt{Autosave Setup}.
 			
 			\item In the \texttt{Autosave Setup} window, set \texttt{Autosave Filename} to the name of your target.
+			
+			\item In \texttt{Autosave Filename} you will label your directory by the following convention:
+			
+			\begin{enumerate}
+				
+				\item Light: \ \texttt{yyyymmdd\_<target\_name>\_filter}
+				
+				\item Flat: \ \texttt{yyyymmdd\_<target\_name>\_flat\_filter}
+				
+				\item Dark: \ \texttt{yyyymmdd\_<target\_name>\_dark\_exposure}
+				
+				\item Bias: \ \texttt{yyyymmdd\_<binning>\_bias}
+				
+			\end{enumerate}
 			
 			\item Make sure \texttt{Slot 1} is selected. Frame \texttt{Type} will be \texttt{Light}. Set your \texttt{Filter}, \texttt{Exposure}, \texttt{Binning}, and the number of exposures or \texttt{Repeat}.
 			
@@ -356,6 +374,8 @@
 			
 			\item Turn off lights and take a series of 15 dark frames. For each integration time used in an observation (including those of your flats), a series of 15 darks per integration time will be needed.
 			
+			\item Keep the lights off and take a series of 25 bias frames
+			
 		\end{enumerate}
 			
 	\newpage
@@ -368,8 +388,6 @@
 			\item Make sure the area around the telescope is completely clear.
 			
 			\item In PWI4, select \texttt{Commands} and then click \texttt{Home mount}. The telescope will slew and locate its reference encoders.
-			
-			\item 
 			
 			\item In PWI3, select \texttt{Disconnect} at the top right of the window to turn off the OTA fans.
 			
