@@ -1,35 +1,39 @@
 \documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbold}
+\usepackage[makeroom]{cancel}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
-\graphicspath{ {./images/} }
+\usepackage{hanging}
 \usepackage{hyperref}
 \usepackage[parfill]{parskip}
+
 \setlength\parindent{0pt}
 \renewcommand{\baselinestretch}{1.5}
 
-\usepackage{amsmath}
 \frenchspacing
 
 \title{Ninnion: The Observer's Operation Manual}
 \author{Cristina Torres Memorial Observatory \\
 	Brownsville, Texas}
-\date{v 28 April 2020}
+\date{v 17 Jan 2023}
 
-% Contributing authors
+% Contributors:
+%
 %	Richard Camuccio
 %	Elizabeth Caputa
 %	Moises Castillo
-%   Wendy Mendoza
-%
-% Contributing observers
 %   Karina Hernandez
 %   Victor Hugo Rangel
 %   Tanya Llanas
 %   Abigail Martinez
+%   Wendy Mendoza
 %   Ivan Morado
 %   Martell Valencia
 %
-% Initial version: 2019-07-03
+% Initial version: 3 Jul 2019
 
 \begin{document}
 	
@@ -37,7 +41,7 @@
 	
 	\begin{figure}[b]
 		\centering
-		\includegraphics[scale=0.2]{CTMO_transparent.png}
+		\includegraphics[scale=0.2]{images/CTMO_transparent.png}
 	\end{figure}
 	
 	\newpage
@@ -52,43 +56,53 @@
 	
 	\begin{enumerate}
 		
-		\item Check sunset. It's advised that you choose the beginning of your critical scientific data run to be no earlier than astronomical twilight. Astronomical twilight occurs when the Sun is 18 degrees below the local horizon. In Brownsville, during the summer, astronomical twilight occurs roughly 1.5 hours after sunset. You can certainly observe before this time, during civil or nautical twilight, but extinction by sunlight will be much more significant.
+		\item Check sunset. It is advised that you choose the beginning of your critical scientific data run to be no earlier than astronomical twilight. Astronomical twilight occurs when the Sun is 18 degrees below the local horizon. In Brownsville, during the summer, astronomical twilight occurs roughly 1.5 hours after sunset. You can certainly observe before this time, during civil or nautical twilight, but extinction by sunlight will be much more significant. See Figure \ref{fig:twilight}.
 		
-		\begin{figure}[h]
+		\begin{figure}[htbp!]
 			\centering
-			\includegraphics[scale=0.5]{twilight-phases-dusk.png}
+			\includegraphics[scale=0.5]{images/twilight-phases-dusk.png}
+			\caption{The definition of dusk (or twilight) depending on the altitude of the Sun below the local horizon.}
+			\label{fig:twilight}
 		\end{figure}
 		
-		\item Check forecast. Visit the \href{https://www.weather.gov}{National Weather Service}.
+		\item Check forecast. Visit the \href{https://www.weather.gov}{National Weather Service}. See Figure \ref{fig:nws}.
 		
-		\begin{figure}[h]
+		\begin{figure}[htbp!]
 			\centering
-			\includegraphics[scale=0.2]{nws.png}
+			\includegraphics[scale=0.3]{images/nws.png}
+			\caption{The home page of the National Weather Service.}
+			\label{fig:nws}
 		\end{figure}
 		
 		\begin{enumerate}
 			
 			\item At the top left, search and select the location \texttt{Olmito, TX, USA}. This action will take you to a new page with the forecast for Olmito.		
 			
-			\item Scroll down the new page to the section titled \texttt{Detailed Forecast}.
+			\item Scroll down the new page to the section titled \texttt{Detailed Forecast}. See Figure \ref{fig:forecast}.
 			
-			\begin{figure}[h]
+			\begin{figure}[htbp!]
 				\centering
-				\includegraphics[scale=0.2]{detailed_forecast.png}
+				\includegraphics[scale=0.3]{images/detailed_forecast.png}
+				\caption{The detailed forecast of the default location selected for Olmito, TX.}
+				\label{fig:forecast}
 			\end{figure}
 			
-			\item To the right of this you will see a map. Find the approximate location of Resaca de la Palma State Park and click it on the map. The page will reload. You should see the green square highlighting the region you just clicked.
+			\item To the right of this you will see a map. There will be a green square on the map already, but ignore it for now. Find the approximate location of the observatory and click it on the map. Wait for the page to reload. You should see the green square highlighting the region you just clicked. See Figure \ref{fig:position}.
 			
-			\begin{figure}[h]
+			\begin{figure}[htbp!]
 				\centering
-				\includegraphics[scale=0.3]{green_square.png}
+				\includegraphics[scale=0.5]{images/green_square.png}
+				\caption{The green square after the page reloads, indicating the correct position has been selected.}
+				\label{fig:position}
 			\end{figure}
 			
-			\item Immediately below this, click the graph titled \texttt{Hourly Weather Forecast}. This action takes you to a new page with the forecast in graphical form of the location you clicked. This page is extremely useful and it is recommended to bookmark this page for future reference. You will want to monitor the changing conditions throughout the day before your observation. Typically, 50\% or greater cloud coverage is a sign that an observation is a no-go.
+			\item Immediately below this, click the graph titled \texttt{Hourly Weather Forecast}. This action takes you to a new page with the forecast in graphical form of the location you clicked. See Figure \ref{fig:graphical}. This page is extremely useful and it is recommended to bookmark this page for future reference. You will want to monitor the changing conditions throughout the day before your observation. Typically, 50\% or greater cloud coverage is a sign that an observation is a no-go.
 			
-			\begin{figure}[h]
+			\begin{figure}[htbp!]
 				\centering
-				\includegraphics[scale=0.3]{graph.png}
+				\includegraphics[scale=0.5]{images/graph.png}
+				\caption{The graphical forecast at the location of the observatory.}
+				\label{fig:graphical}
 			\end{figure}
 			
 		\end{enumerate}
@@ -103,11 +117,11 @@
 		
 		\item What are the coordinates of your object? Object coordinates are typically expressed in right ascension (\texttt{hh:mm:ss.ssss}) and declination (\texttt{$\pm$dd:mm:ss.ssss}) in the J2000 epoch.
 		
-		\item Check the altitude range over your expected observation time. For accurate photometry, you want to make sure your object is above 30 degrees in altitude. It's useful to visualize the path of the object in the sky ahead of time, using planetarium software like Stellarium.
+		\item Check the altitude range over your expected observation time. For accurate photometry, you want to make sure your object is above 30 degrees in altitude. It is useful to visualize the path of the object in the sky ahead of time, using planetarium software like Stellarium.
 		
-		\item Obtain a reference field for your night. Using Stellarium or any optical image database online like \href{http://simbad.u-strasbg.fr/simbad/}{SIMBAD}, you should find a visual estimation of what your telescope will be pointing
+		\item Obtain a reference field for your night. Using software such as Stellarium, or any optical image database online like \href{http://simbad.u-strasbg.fr/simbad/}{SIMBAD} or the \href{https://archive.stsci.edu/cgi-bin/dss_form}{STScI Digitized Sky Survey}. Finding archival images of your target fields will also help you check the pointing of the telescope.
 		
-		\item Determine suitable reference stars. Make sure they aren't variable stars and that their color indices are similar to your target object.
+		\item Determine suitable reference stars. Make sure they are not variable stars and that their color indices are similar to your target object.
 		
 	\end{enumerate}
 	
@@ -115,7 +129,7 @@
 	
 	\begin{enumerate}
 		
-		\item What's your strategy?
+		\item What is your strategy?
 		
 		\begin{enumerate}
 			
@@ -123,13 +137,13 @@
 			
 			\item Are you tracking a single object?
 			
-			\item Does the object move with significant proper motion or only with sidereal motion?
+			\item Does the object have significant proper motion?
 			
 		\end{enumerate}
 		
-		\item If you're planning to observe multiple objects, like a selection of galaxies, then you want to observe the galaxies that are scheduled to set first. That way you can observe the most amount of galaxies on your list at a suitable air mass.
+		\item If you plan to observe multiple objects, like a selection of galaxies, then you want to observe the targets that are scheduled to set first. That way you can observe the most amount of galaxies on your list at a suitable air mass.
 		
-		\item If you're planning to observe a single target over time, then you'll need to plan the exposure time and cadence of your image sequence. This answer will depend on the nature of your target.
+		\item If you plan to observe a single target over time, then you will need to decide on the exposure time and cadence of your image sequence. This answer will depend on the nature of your target and the response of the optical system.
 		
 		\begin{enumerate}
 			
@@ -148,7 +162,7 @@
 	\newpage
 	\section{Starting Up}
 	
-	\subsection{Entry and Power Up}
+	\subsection{Entry and power up}
 	
 	\begin{enumerate}
 		
@@ -156,37 +170,35 @@
 		
 		\item Turn on the lights. Use the switch on the right side entering the dome.
 		
-		\item Message the team that the dome has been opened.
+		\item Bring the padlocks and your personal belongings into the control room. Remember that the control room door should always be shut.
 		
-		\item Turn on all circuit breakers 1-12. Breakers 2, 7, and 11 should always remain ON.
+		\item Message the team on the ``CTMO Leaders'' WhatsApp group that the dome has been opened.
 		
-		\item Turn on the UPS battery backup. This is the slim, tall box on the table to the immediate left of the breaker box. Turn on using the center power button. After a beep and some warming up, the information screen should indicate the battery is running on the power line rather than on the battery.
+		\item Turn on all circuit breakers 1-12. Breakers numbered 2, 5, 7, and 11 should always remain on.
 		
-		\item Turn on the AC unit on the wall.
+		\item Turn on the UPS battery backup. This is the slim, tall box on the table to the immediate left of the breaker box. Turn it on using the center power button. After a beep and some warming up, the information screen should indicate the battery is running on the power line rather than on the battery.
 		
-		\item Turn on Atlas. Grub should automatically boot Windows. Turn on the monitor.
+		\item In the control room, turn on the AC unit. 
+		
+		\item Turn on Atlas. First, you need to toggle the power switch on the back of the computer. GRUB should automatically boot Windows.
 		
 	\end{enumerate}
 	
-	\subsection{Open Shutter Window}
+	\subsection{Open shutter window}
 	
 	\begin{enumerate}
 		
 		\item Unplug the battery charger from the wall outlet.
 		
-		\item Remove the charger from the battery. First remove the RED leads from the RED (+) terminal on the battery. Then remove the BLACK lead from the BLACK (-) terminal on the battery.
+		\item Remove the charger from the battery. First remove the red leads from the red (+) terminal on the battery. Then remove the black lead from the black (-) terminal on the battery.
 		
 		\item Remove the charger from the wall and place it safely on the floor.
 		
-		\item Connect the BLACK motor cable to the BLACK (-) terminal on the battery.
-		
-		\item Connect the RED motor cable to the RED (+) terminal on the battery.
-		
-		\item Press and hold \texttt{OPEN} on the shutter controller. Open until the white rubber lip of the shutter window is coincident with the blue metal bar near zenith.
+		\item Take the shutter controller with the plastic cover. Press the green power button on the controller. Press and hold \texttt{UP} on the shutter controller. Open until the white rubber lip of the shutter window is coincident with the blue metal bar near zenith.
 		
 	\end{enumerate}
 	
-	\subsection{Open Shutter Door}
+	\subsection{Open shutter door}
 	
 	\begin{enumerate}
 		
@@ -194,7 +206,7 @@
 		
 	\end{enumerate}
 	
-	\subsection{Prepare Telescope}
+	\subsection{Prepare telescope}
 	
 	\begin{enumerate}
 		
@@ -202,7 +214,7 @@
 		
 		\item Remove the cloth cover from the secondary mirror.
 		
-		\item Remove the plastic shower cap 
+		\item Remove the plastic shower cap.
 		
 		\item Remove the round plastic lid from the primary aperture.
 		
@@ -210,35 +222,49 @@
 		
 		\item Turn on the mount.
 		
+		\item Make sure all cables attached to the telescope and accessories are loose and that there is enough free cable to allow for the telescope's full range of motion.
+		
 	\end{enumerate}
 	
-	\subsection{Connect to EFA Kit}
+	\subsection{Connect to EFA kit}
 	
 	\begin{enumerate}
 		
-		\item Open PWI3. Verify the computer established connection to the electronic focus assembly (EFA). The EFA should connect automatically to the computer and begin cooling the OTA and primary mirror. You should hear the fans turn on.
+		\item Open PWI3. Verify the computer established connection to the electronic focus assembly (EFA). The EFA should connect automatically to the computer and begin cooling the OTA and primary mirror. You should hear the fans in the mount turn on.
 		
 		\item Click the \texttt{Temperature} tab on the right in PWI3. Record the ambient temperature given by the display.
 		
 	\end{enumerate}
 	
-	\subsection{Prepare Camera}
+	\subsection{Connect to camera}
 	
 	\begin{enumerate}
 		
 		\item Open MaxIm DL.
 		
-		\item Connect to camera. Under \texttt{View}, open the \texttt{Camera Control Window}. Select \texttt{Setup} and then \texttt{Connect} to enable computer connection to the camera.
+		\item Connect to the camera. Under \texttt{View}, open the \texttt{Camera Control Window}. Select \texttt{Setup} and then \texttt{Connect} to enable computer connection to the camera.
 		
-		\item Cool camera. Click \texttt{Cooler} and enter the set point. It is advisable to limit the initial set point to no more than 40 degrees C relative to the ambient temperature to avoid over-straining the thermoelectic coolers. For example, if the ambient temperature is 30 degrees C, then the set point should be about -10 degrees C.
+		\item Cool the camera. Click \texttt{Cooler} and enter the set point. It is advisable to limit the initial set point to no more than 40 degrees C relative to the ambient temperature to avoid over-straining the thermoelectric coolers. (For example, if the ambient temperature is 30 degrees C, then the set point should be about -10 degrees C.)
 		
-		\item Under \texttt{Connect} select \texttt{On} to begin cooling the camera. The cooler power should not exceed 80\% during operation.
+		\item Under \texttt{Connect} select \texttt{On} to begin cooling the camera. The cooler power should not exceed 80\% during stable operation (although the power might exceed this during the cooling phase).
 		
-		\item Once the camera temperature stabilizes, take 10 bias frames on ``continuous'' (these don't need to be saved). Taking a quick set of bias frames will clear any residual charge stored from previous exposures on the CCD.
+		\item Once the camera temperature stabilizes, take 10 bias frames on \texttt{Continuous} (these don't need to be saved). Taking a quick set of bias frames will clear any residual charge stored from previous exposures on the CCD.
+		
+	\end{enumerate}
+
+	\subsection{Connect to filter wheel}
+	
+	\begin{enumerate}
+		
+		\item Open FLIFilter. Click \texttt{Home}.
+		
+		\item The filter wheel will initially be at position ``unknown'' and will end up at slot 0 ``unfiltered''. You can select filters by clicking each of their corresponding buttons once homing is finished.
+		
+		\item If you click \texttt{CW} or \texttt{CCW}, you will have to re-home the filter wheel before selecting another one.
 		
 	\end{enumerate}
 	
-	\subsection{Connect to Mount}
+	\subsection{Connect to mount}
 	
 	\begin{enumerate}
 		
@@ -246,9 +272,7 @@
 		
 		\item Click \texttt{Enable RA} and \texttt{Enable Dec} under \texttt{Connect}.
 		
-		\item Make sure the area around the telescope is completely clear.
-		
-		\item Select \texttt{Commands} and then click \texttt{Home mount}. The telescope will slew and locate its reference encoders.
+		\item Make sure the area around the telescope is completely clear. Select \texttt{Commands} and then click \texttt{Home Mount}. The telescope will slew and locate its reference encoders.
 		
 		\item Once the telescope has stopped moving, you are ready to observe!
 		
@@ -257,7 +281,7 @@
 	\newpage
 	\section{Observing}
 	
-	\subsection{Slewing the telescope}
+	\subsection{Slew telescope}
 	
 	\begin{enumerate}
 		
@@ -265,12 +289,13 @@
 		
 	\end{enumerate}
 	
-	\subsection{Set Up ASCOM}
+	\subsection{Set up ASCOM}
 	
 	\begin{enumerate}
+		
 		\item Open ASCOM Device Hub. Click \texttt{Device Setup} and click \texttt{Tools}.
 		
-		\item Click \texttt{Telescope Setup}, click \texttt{Choose}, select \texttt{Plane Wave interface}, click \texttt{OK}.
+		\item Click \texttt{Telescope Setup}, click \texttt{Choose}, select \texttt{Plane Wave Interface}, click \texttt{OK}.
 		
 		\item Click \texttt{Dome Setup}, click \texttt{Choose}, select \texttt{Dome Simulator NET}, click \texttt{OK}. 
 		
@@ -298,17 +323,15 @@
 		
 		\item Here we can compare the focuser position given by MaxIM DL to that given by PWI3. Focusing corrections can be made by reading the MaxIm position and moving the focus status position in PWI3.
 		
-		\item Go to Section 3.3, Step 9 to test if ASCOM is running. 
+		\item Go to Section 3.3, Step 8 to test if ASCOM is running. 
 		
 	\end{enumerate}
 	
-	\subsection{Taking a test exposure}
+	\subsection{Take test exposure}
 	
 	\begin{enumerate}
 		
 		\item In MaxIm DL, under the \texttt{Expose} tab, select a ``Single'' exposure (under the \texttt{Start} button on the right).
-		
-		\item Select the filter under the \texttt{Filter Wheel} drop-down list.
 		
 		\item Enter an exposure time under \texttt{Seconds}.
 		
@@ -332,19 +355,20 @@
 		
 		\item Under \texttt{C:\textbackslash Documents\textbackslash Observations} create a directory with the evening date in the format \texttt{yyyy-mm-dd}.
 		
-		\item Under the newly-made directory, create a directory called \texttt{dark}, a directory called \texttt{flat}, and a directory for each of your targets by name (e.g. for target exoplanet system HAT-P-7 the directory would be something like \texttt{hatp7}). See Figure 1 for assistance.
+		\item Under the newly-made directory, create a directory called \texttt{dark}, a directory called \texttt{flat}, and a directory for each of your targets by name (e.g. for target exoplanet system HAT-P-7 the directory would be something like \texttt{hatp7}). See Figure~\ref{fig:directory}.
 		
 	\end{enumerate}
 	
-	\begin{figure}[h]
+	\begin{figure}[htbp!]
 		\centering
 		\includegraphics[scale=0.5]{images/ctmo_format.png}
 		\caption{The directory structure for CTMO data. The object file names should be a single, unbroken string of the object's name. The (g, 100) and (i, 10) are the filters and exposure time used for that particular object (you don't need to include this in the file name).}
+		\label{fig:directory}
 	\end{figure}
 	
 	\subsection{Set up autosave routine}
 	
-	Note that if you're picking multiple targets, you can either set up multiple autosaves or use the \texttt{Single} exposure option to manually expose each target.
+	Note that if you choose multiple targets, you can either i) set up multiple autosave routines, or ii) use the \texttt{Single} exposure option to manually expose each target.
 	
 	\begin{enumerate}
 		
@@ -352,21 +376,7 @@
 		
 		\item In the \texttt{Autosave Setup} window, set \texttt{Autosave Filename} to the name of your target.
 		
-		\item In \texttt{Autosave Filename} you will label your directory by the following convention:
-		
-		\begin{enumerate}
-			
-			\item Light: \ \texttt{yyyymmdd\_<target\_name>\_filter}
-			
-			\item Flat: \ \texttt{yyyymmdd\_<target\_name>\_flat\_filter}
-			
-			\item Dark: \ \texttt{yyyymmdd\_<target\_name>\_dark\_exposure}
-			
-			\item Bias: \ \texttt{yyyymmdd\_<binning>\_bias}
-			
-		\end{enumerate}
-		
-		\item Make sure \texttt{Slot 1} is selected. Frame \texttt{Type} will be \texttt{Light}. Set your \texttt{Filter}, \texttt{Exposure}, \texttt{Binning}, and the number of exposures or \texttt{Repeat}.
+		\item Make sure \texttt{Slot 1} is selected. Frame \texttt{Type} will be \texttt{Light}. Set your \texttt{Exposure}, \texttt{Binning}, and the number of exposures or \texttt{Repeat}.
 		
 		\item Select \texttt{Options} and \texttt{Set Image Save Path...}. Under \texttt{Documents}, \texttt{Observations}, create a new directory with the current date (in \texttt{yyyy-mm-dd} format). Then, under this new directory, create a new subdirectory with the name of your target. Click \texttt{OK} to close this window.
 		
@@ -376,7 +386,7 @@
 		
 	\end{enumerate}
 	
-	\subsection{Set up data log entry}
+	\subsection{Set up data log}
 	
 	\begin{enumerate}
 		
@@ -386,11 +396,11 @@
 		
 	\end{enumerate}
 	
-	\subsection{Monitor conditions throughout night}
+	\subsection{Monitor observing conditions}
 	
 	\begin{enumerate}
 		
-		\item Weather and sky coverage should be a priority, since this directly affects the data stream and could pose risks to the telescope and dome (like sudden adverse weather conditions).
+		\item Weather and sky coverage should be a priority, since this directly affects the data stream and could pose risks to the telescope and dome.
 		
 		\item Make sure the dome shutter window remains in line with the telescope pointing. At the time of writing, the dome rotation has not been integrated into the telescope motion.
 		
@@ -400,11 +410,13 @@
 	
 	\subsection{Take calibration frames}
 	
+	\subsubsection{Flat frames}
+	
 	\begin{enumerate}
 		
 		\item Make sure the area around the telescope is completely clear.
 		
-		\item In PWI4, select \texttt{Commands} and then click \texttt{Home mount}. The telescope will slew and locate its reference encoders.
+		\item In PWI4, select \texttt{Commands} and then click \texttt{Home Mount}. The telescope will slew and locate its reference encoders.
 		
 		\item In PWI4, under the \texttt{Goto} tab, enter the right altitude and azimuth of the flatfield screen. Use an azimuth of 352 degrees and an altitude of 12 degrees. You will then need to slew the dome to center the flatfield screen in the telescope FOV.
 		
@@ -412,29 +424,50 @@
 		
 		\item Take a series of at least 15 flats per filter used that night.
 		
+	\end{enumerate}
+
+	\subsubsection{Dark frames}
+	
+	\begin{enumerate}
+		
 		\item Turn off lights and take a series of 15 dark frames. For each integration time used in an observation (including those of your flats), a series of 15 darks per integration time will be needed.
 		
-		\item Keep the lights off and take a series of 25 bias frames
+	\end{enumerate}
+
+	\subsubsection{Bias frames}
+	
+	\begin{enumerate}
+		
+		\item Keep the lights off and take a series of 25 bias frames.
 		
 	\end{enumerate}
 	
 	\newpage
 	\section{Shutting Down}
 	
-	\subsection{Disconnect from telescope}
+	\subsection{Disconnect from mount}
 	
 	\begin{enumerate}
 		
 		\item Make sure the area around the telescope is completely clear.
 		
-		\item In PWI4, select \texttt{Commands} and then click \texttt{Home mount}. The telescope will slew and locate its reference encoders.
+		\item In PWI4, select \texttt{Commands} and then click \texttt{Home Mount}. The telescope will slew and locate its reference encoders.
 		
 		\item In PWI3, select \texttt{Disconnect} at the top right of the window to turn off the OTA fans.
 		
 		\item Close PWI3 and PWI4.
-		\item Disconnect Telescope, Dome and Focuser close ASCOM.
+		
+		\item If you used ASCOM, disconnect \texttt{Telescope}, \texttt{Dome}, and \texttt{Focuser}. Close ASCOM.
 		
 		\item Turn off the mount.
+		
+	\end{enumerate}
+
+	\subsection{Disconnect from filter wheel}
+	
+	\begin{enumerate}
+		
+		\item Close FLIFilter.
 		
 	\end{enumerate}
 	
@@ -454,7 +487,7 @@
 		
 	\end{enumerate}
 	
-	\subsection{Cover the telescope}
+	\subsection{Cover telescope}
 	
 	\begin{enumerate}
 		
@@ -484,15 +517,11 @@
 	
 	\begin{enumerate}
 		
-		\item Press and hold \texttt{CLOSE} on the shutter controller. Close until the white rubber lip of the shutter window is coincident with the very top of the shutter door.
+		\item Press and hold \texttt{CLOSE} on the shutter controller (the one with a plastic cover). Close the shutter until the shutter door automatically stops.
+
+		\item Place the charger on the wall. Connect the charger to the battery.
 		
-		\item Remove the RED motor cable from the RED (+) terminal on the battery.
-		
-		\item Remove the BLACK motor cable from the BLACK (-) terminal on the battery.
-		
-		\item Place the charger on the wall.
-		
-		\item Connect the charger to the battery. First connect the BLACK lead to the BLACK (-) terminal on the battery. Then connect the RED lead to the RED (-) terminal on the battery.
+		\item First connect the BLACK lead to the BLACK (-) terminal on the battery. Then connect the RED lead to the RED (-) terminal on the battery.
 		
 	\end{enumerate}
 	
@@ -500,15 +529,15 @@
 	
 	\begin{enumerate}
 		
-		\item Turn off the AC unit.
+		\item Turn off the AC unit in the control room.
 		
 		\item Turn off the UPS battery backup. Press and hold the center power button until you hear it beep.
 		
-		\item Turn off circuits breakers. Breakers 2, 7, and 11 should always remain ON.
+		\item Turn off circuits breakers. Breakers 2, 5, 7, and 11 should always remain ON.
 		
-		\item Turn off the lights.
+		\item Turn off the lights, both inside and outside the control room, and shut the control room door.
 		
-		\item Exit dome and replace padlocks on the hatch.
+		\item Exit the dome and replace the padlocks on the hatch.
 		
 		\item Message the team that the dome has been closed.
 		
