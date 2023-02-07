@@ -18,21 +18,8 @@
 \title{Ninnion: The Observer's Operation Manual}
 \author{Cristina Torres Memorial Observatory \\
 	Brownsville, Texas}
-\date{v 17 Jan 2023}
+\date{v 7 Feb 2023}
 
-% Contributors:
-%
-%	Richard Camuccio
-%	Elizabeth Caputa
-%	Moises Castillo
-%   Karina Hernandez
-%   Victor Hugo Rangel
-%   Tanya Llanas
-%   Abigail Martinez
-%   Wendy Mendoza
-%   Ivan Morado
-%   Martell Valencia
-%
 % Initial version: 3 Jul 2019
 
 \begin{document}
@@ -49,10 +36,12 @@
 	
 	\newpage
 	\section{Planning an Observation}
+	\label{sec:planning-an-observation}
 	
 	Planning an observation requires a few critical steps that should be completed before arriving at the observatory. Entering the observatory with an observation strategy and understanding of the sky conditions is crucial for completing a scientific observation.
 	
 	\subsection{Check the weather and sky conditions}
+	\label{sec:check-the-weather-and-sky-conditions}
 	
 	\begin{enumerate}
 		
@@ -112,6 +101,7 @@
 	\end{enumerate}
 	
 	\subsection{Identify your target}
+	\label{sec:identify-your-target}
 	
 	\begin{enumerate}
 		
@@ -126,6 +116,7 @@
 	\end{enumerate}
 	
 	\subsection{Plan your observing strategy}
+	\label{sec:plan-your-observing-strategy}
 	
 	\begin{enumerate}
 		
@@ -161,8 +152,10 @@
 	
 	\newpage
 	\section{Starting Up}
+	\label{sec:starting-up}
 	
 	\subsection{Entry and power up}
+	\label{sec:entry-and-power-up}
 	
 	\begin{enumerate}
 		
@@ -185,6 +178,7 @@
 	\end{enumerate}
 	
 	\subsection{Open shutter window}
+	\label{sec:open-shutter-window}
 	
 	\begin{enumerate}
 		
@@ -199,6 +193,7 @@
 	\end{enumerate}
 	
 	\subsection{Open shutter door}
+	\label{sec:open-shutter-door}
 	
 	\begin{enumerate}
 		
@@ -207,6 +202,7 @@
 	\end{enumerate}
 	
 	\subsection{Prepare telescope}
+	\label{sec:prepare-telescope}
 	
 	\begin{enumerate}
 		
@@ -227,6 +223,7 @@
 	\end{enumerate}
 	
 	\subsection{Connect to EFA kit}
+	\label{sec:connect-to-efa-kit}
 	
 	\begin{enumerate}
 		
@@ -237,6 +234,7 @@
 	\end{enumerate}
 	
 	\subsection{Connect to camera}
+	\label{sec:connect-to-camera}
 	
 	\begin{enumerate}
 		
@@ -253,6 +251,7 @@
 	\end{enumerate}
 
 	\subsection{Connect to filter wheel}
+	\label{sec:connect-to-filter-wheel}
 	
 	\begin{enumerate}
 		
@@ -265,6 +264,7 @@
 	\end{enumerate}
 	
 	\subsection{Connect to mount}
+	\label{sec:connect-to-mount}
 	
 	\begin{enumerate}
 		
@@ -280,8 +280,10 @@
 	
 	\newpage
 	\section{Observing}
+	\label{sec:observing}
 	
 	\subsection{Slew telescope}
+	\label{sec:slew-telescope}
 	
 	\begin{enumerate}
 		
@@ -289,7 +291,244 @@
 		
 	\end{enumerate}
 	
-	\subsection{Set up ASCOM}
+	\subsection{Take test exposure}
+	\label{sec:take-test-exposure}
+	
+	\begin{enumerate}
+		
+		\item In MaxIm DL, under the \texttt{Expose} tab, select a ``Single'' exposure (under the \texttt{Start} button on the right).
+		
+		\item Enter an exposure time under \texttt{Seconds}.
+		
+		\item Subframes should be disabled, unless you're doing an observation that specifically needs them.
+		
+		\item Select the binning under the \texttt{X Binning} drop-down list. Binning should match the nightly atmospheric seeing, as well as chosen for balancing the SNR and resolution of your particular object. Higher binning means higher SNR per pixel, but at a loss of pixel resolution on the overall image.
+		
+		\item If your image is out of focus, go to the \texttt{AF CONFIG} tab in PWI3. Take an image count (\texttt{Steps}) of 10 and set the exposure length (under \texttt{Seconds}) and binning (under \texttt{X Binning}) you will be using for your target. Under the tab \texttt{AF CONFIG}, click \texttt{START AF}, which will focus your images. Wait until all 10 images are done being processed.
+		
+		\item Additionally, in the \texttt{Options} menu, make sure that dark frames are not being automatically subtracted.
+		
+		\item Finally, once your telescope is settled on a target and your exposure parameters are set, click the \texttt{Start} button at the top right of the camera control window. The idle bar will begin to fill as the exposure commences. A picture should automatically render in MaxIm DL once the exposure is complete. First light!
+		
+		\item If you used ASCOM (see \hyperref[sec:set-up-ascom]{Appendix A}), to test the ASCOM connection, to go \texttt{View}, select \texttt{FITS Header Window}, and check for \texttt{EXPTIME}, \texttt{FOCUSPOS}, \texttt{OBJCTRA}, and \texttt{OBJCTDEC} to make sure it is reading the correct information you are using with your observation. 
+		
+	\end{enumerate}
+	
+	\subsection{Set up directory structure}
+	\label{sec:set-up-directory-structure}
+	
+	\begin{enumerate}
+		
+		\item Under \texttt{C:\textbackslash Documents\textbackslash Observations} create a directory with the evening date in the format \texttt{yyyy-mm-dd}.
+		
+		\item Under the newly-made directory, create a directory called \texttt{dark}, a directory called \texttt{flat}, and a directory for each of your targets by name (e.g. for target exoplanet system HAT-P-7 the directory would be something like \texttt{hatp7}). See Figure~\ref{fig:directory}.
+		
+	\end{enumerate}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.5]{images/ctmo_format.png}
+		\caption{The directory structure for CTMO data. The object file names should be a single, unbroken string of the object's name. The (g, 100) and (i, 10) are the filters and exposure time used for that particular object (you don't need to include this in the file name).}
+		\label{fig:directory}
+	\end{figure}
+	
+	\subsection{Set up autosave routine}
+	\label{sec:set-up-autosave-routine}
+	
+	Note that if you choose multiple targets, you can either i) set up multiple autosave routines, or ii) use the \texttt{Single} exposure option to manually expose each target.
+	
+	\begin{enumerate}
+		
+		\item In MaxIm DL, in the \texttt{Camera Control} window, under the \texttt{Expose} tab, click the \texttt{Autosave} button. A new window should appear called \texttt{Autosave Setup}.
+		
+		\item In the \texttt{Autosave Setup} window, set \texttt{Autosave Filename} to the name of your target.
+		
+		\item Make sure \texttt{Slot 1} is selected. Frame \texttt{Type} will be \texttt{Light}. Set your \texttt{Exposure}, \texttt{Binning}, and the number of exposures or \texttt{Repeat}.
+		
+		\item Select \texttt{Options} and \texttt{Set Image Save Path...}. Under \texttt{Documents}, \texttt{Observations}, create a new directory with the current date (in \texttt{yyyy-mm-dd} format). Then, under this new directory, create a new subdirectory with the name of your target. Click \texttt{OK} to close this window.
+		
+		\item Finally, in the \texttt{Autosave Setup} window, select \texttt{Apply} followed by \texttt{OK} to close the window.
+		
+		\item In the \texttt{Camera Control} window, select \texttt{Start} to begin taking data.
+		
+	\end{enumerate}
+	
+	\subsection{Set up data log}
+	\label{sec:set-up-data-log}
+	
+	\begin{enumerate}
+		
+		\item In a web browser, navigate to the \href{https://docs.google.com/spreadsheets/d/1-flrFYcHwpuXavXAMwkF41ibTWqWWC0Sgsv5X402HyY/edit?usp=sharing}{CTMO Data Log}.
+		
+		\item Create a new entry and follow previous examples for the proper entry format and syntax.
+		
+	\end{enumerate}
+	
+	\subsection{Monitor observing conditions}
+	\label{sec:monitor-observing-conditions}
+	
+	\begin{enumerate}
+		
+		\item Weather and sky coverage should be a priority, since this directly affects the data stream and could pose risks to the telescope and dome.
+		
+		\item Make sure the dome shutter window remains in line with the telescope pointing. At the time of writing, the dome rotation has not been integrated into the telescope motion.
+		
+		\item Make sure the data is being saved in the correct directory and recorded in the data log.
+		
+	\end{enumerate}
+	
+	\subsection{Take calibration frames}
+	\label{sec:take-calibration-frames}
+	
+	\subsubsection{Flat frames}
+	\label{sec:flat-frames}
+	
+	\begin{enumerate}
+		
+		\item Make sure the area around the telescope is completely clear.
+		
+		\item In PWI4, select \texttt{Commands} and then click \texttt{Home Mount}. The telescope will slew and locate its reference encoders.
+		
+		\item In PWI4, under the \texttt{Goto} tab, enter the right altitude and azimuth of the flatfield screen. Use an azimuth of 352 degrees and an altitude of 12 degrees. You will then need to slew the dome to center the flatfield screen in the telescope FOV.
+		
+		\item Connect the dimmer switch plug and press the dimmer switch knob to click it on. Next, turn the dimmer switch to produce some light and take a test exposure. This process will be iterative until the appropriate level is reached. The average pixel value across the frame should be roughly 50\% the saturation limit of the camera. For a 16-bit camera like the ProLine 16803, the saturation limit is 65535 counts.
+		
+		\item Take a series of at least 15 flats per filter used that night.
+		
+	\end{enumerate}
+
+	\subsubsection{Dark frames}
+	\label{sec:dark-frames}
+	
+	\begin{enumerate}
+		
+		\item Turn off lights and take a series of 15 dark frames. For each integration time used in an observation (including those of your flats), a series of 15 darks per integration time will be needed.
+		
+	\end{enumerate}
+
+	\subsubsection{Bias frames}
+	\label{sec:bias-frames}
+	
+	\begin{enumerate}
+		
+		\item Keep the lights off and take a series of 25 bias frames.
+		
+	\end{enumerate}
+	
+	\newpage
+	\section{Shutting Down}
+	\label{sec:shutting-down}
+	
+	\subsection{Disconnect from mount}
+	\label{sec:disconnect-from-mount}
+	
+	\begin{enumerate}
+		
+		\item Make sure the area around the telescope is completely clear.
+		
+		\item In PWI4, select \texttt{Commands} and then click \texttt{Home Mount}. The telescope will slew and locate its reference encoders.
+		
+		\item In PWI3, select \texttt{Disconnect} at the top right of the window to turn off the OTA fans.
+		
+		\item Close PWI3 and PWI4.
+		
+		\item If you used ASCOM (see \hyperref[sec:set-up-ascom]{Appendix A}), disconnect \texttt{Telescope}, \texttt{Dome}, and \texttt{Focuser}. Close ASCOM.
+		
+		\item Turn off the mount.
+		
+	\end{enumerate}
+
+	\subsection{Disconnect from filter wheel}
+	\label{sec:disconnect-from-filter-wheel}
+	
+	\begin{enumerate}
+		
+		\item Close FLIFilter.
+		
+	\end{enumerate}
+	
+	\subsection{Disconnect from camera}
+	\label{sec:disconnect-from-camera}
+	
+	\begin{enumerate}
+		
+		\item In MaxIm DL, in the \texttt{Camera Control Window}, select \texttt{Setup} and then \texttt{Warm Up} to begin warming up the camera.
+		
+		\item Wait until the cooler power has dropped to close to 0\% and the temperature of the chip is close to the ambient temperature. This might take a while, therefore you may continue with shutting down the rest of the observatory (up to, but not including, turning off the UPS battery backup) and then come back to this point.
+		
+		\item Select \texttt{Off} under \texttt{Setup} to turn off the camera cooler.
+		
+		\item Select \texttt{Disconnect} and then close MaxIm DL.
+		
+		\item Shut down the computer (allow for updates before shutting off power). Turn off the monitors.
+		
+	\end{enumerate}
+	
+	\subsection{Cover telescope}
+	\label{sec:cover-telescope}
+	
+	\begin{enumerate}
+		
+		\item Slide the light shroud up toward the front of the OTA.
+		
+		\item Replace the round plastic lid onto the primary aperture.
+		
+		\item Replace the plastic shower cap and use clips to fasten it.
+		
+		\item Replace the cloth cover onto the secondary mirror.
+		
+		\item Slide the light shroud back down to completely enclose the OTA.
+		
+	\end{enumerate}
+	
+	\subsection{Close shutter door}
+	\label{sec:close-shutter-door}
+	
+	\begin{enumerate}
+		
+		\item Pull the door back up to its original position.
+		
+		\item Wrap the rope completely around the handle, making sure the door remains flush against the dome (even with a decent push). Tie the rope into a knot to keep it secure.
+		
+	\end{enumerate}
+	
+	\subsection{Close shutter window}
+	\label{sec:close-shutter-window}
+	
+	\begin{enumerate}
+		
+		\item Press and hold \texttt{CLOSE} on the shutter controller (the one with a plastic cover). Close the shutter until the shutter door automatically stops.
+
+		\item Place the charger on the wall. Connect the charger to the battery.
+		
+		\item First connect the BLACK lead to the BLACK (-) terminal on the battery. Then connect the RED lead to the RED (-) terminal on the battery.
+		
+	\end{enumerate}
+	
+	\subsection{Power Down and Exit}
+	\label{sec:power-down-and-exit}
+	
+	\begin{enumerate}
+		
+		\item Turn off the AC unit in the control room.
+		
+		\item Turn off the UPS battery backup. Press and hold the center power button until you hear it beep.
+		
+		\item Turn off circuits breakers. Breakers 2, 5, 7, and 11 should always remain ON.
+		
+		\item Turn off the lights, both inside and outside the control room, and shut the control room door.
+		
+		\item Exit the dome and replace the padlocks on the hatch.
+		
+		\item Message the team that the dome has been closed.
+		
+	\end{enumerate}
+
+	\newpage
+	\appendix
+		
+	\section{Set up ASCOM}
+	\label{sec:set-up-ascom}
 	
 	\begin{enumerate}
 		
@@ -323,224 +562,8 @@
 		
 		\item Here we can compare the focuser position given by MaxIM DL to that given by PWI3. Focusing corrections can be made by reading the MaxIm position and moving the focus status position in PWI3.
 		
-		\item Go to Section 3.3, Step 8 to test if ASCOM is running. 
+		\item Go to \hyperref[sec:take-test-exposure]{Section 3.2, Step 8} to test if ASCOM is running. 
 		
-	\end{enumerate}
-	
-	\subsection{Take test exposure}
-	
-	\begin{enumerate}
-		
-		\item In MaxIm DL, under the \texttt{Expose} tab, select a ``Single'' exposure (under the \texttt{Start} button on the right).
-		
-		\item Enter an exposure time under \texttt{Seconds}.
-		
-		\item Subframes should be disabled, unless you're doing an observation that specifically needs them.
-		
-		\item Select the binning under the \texttt{X Binning} drop-down list. Binning should match the nightly atmospheric seeing, as well as chosen for balancing the SNR and resolution of your particular object. Higher binning means higher SNR per pixel, but at a loss of pixel resolution on the overall image.
-		
-		\item If your image is out of focus, go to the \texttt{AF CONFIG} tab in PWI3. Take an image count (\texttt{Steps}) of 10 and set the exposure length (under \texttt{Seconds}) and binning (under \texttt{X Binning}) you will be using for your target. Under the tab \texttt{AF CONFIG}, click \texttt{START AF}, which will focus your images. Wait until all 10 images are done being processed.
-		
-		\item Additionally, in the \texttt{Options} menu, make sure that dark frames are not being automatically subtracted.
-		
-		\item Finally, once your telescope is settled on a target and your exposure parameters are set, click the \texttt{Start} button at the top right of the camera control window. The idle bar will begin to fill as the exposure commences. A picture should automatically render in MaxIm DL once the exposure is complete. First light!
-		
-		\item To test the ASCOM connection, to go \texttt{View}, select \texttt{FITS Header Window}, and check for \texttt{EXPTIME}, \texttt{FOCUSPOS}, \texttt{OBJCTRA}, and \texttt{OBJCTDEC} to make sure it is reading the correct information you are using with your observation. 
-		
-	\end{enumerate}
-	
-	\subsection{Set up directory structure}
-	
-	\begin{enumerate}
-		
-		\item Under \texttt{C:\textbackslash Documents\textbackslash Observations} create a directory with the evening date in the format \texttt{yyyy-mm-dd}.
-		
-		\item Under the newly-made directory, create a directory called \texttt{dark}, a directory called \texttt{flat}, and a directory for each of your targets by name (e.g. for target exoplanet system HAT-P-7 the directory would be something like \texttt{hatp7}). See Figure~\ref{fig:directory}.
-		
-	\end{enumerate}
-	
-	\begin{figure}[htbp!]
-		\centering
-		\includegraphics[scale=0.5]{images/ctmo_format.png}
-		\caption{The directory structure for CTMO data. The object file names should be a single, unbroken string of the object's name. The (g, 100) and (i, 10) are the filters and exposure time used for that particular object (you don't need to include this in the file name).}
-		\label{fig:directory}
-	\end{figure}
-	
-	\subsection{Set up autosave routine}
-	
-	Note that if you choose multiple targets, you can either i) set up multiple autosave routines, or ii) use the \texttt{Single} exposure option to manually expose each target.
-	
-	\begin{enumerate}
-		
-		\item In MaxIm DL, in the \texttt{Camera Control} window, under the \texttt{Expose} tab, click the \texttt{Autosave} button. A new window should appear called \texttt{Autosave Setup}.
-		
-		\item In the \texttt{Autosave Setup} window, set \texttt{Autosave Filename} to the name of your target.
-		
-		\item Make sure \texttt{Slot 1} is selected. Frame \texttt{Type} will be \texttt{Light}. Set your \texttt{Exposure}, \texttt{Binning}, and the number of exposures or \texttt{Repeat}.
-		
-		\item Select \texttt{Options} and \texttt{Set Image Save Path...}. Under \texttt{Documents}, \texttt{Observations}, create a new directory with the current date (in \texttt{yyyy-mm-dd} format). Then, under this new directory, create a new subdirectory with the name of your target. Click \texttt{OK} to close this window.
-		
-		\item Finally, in the \texttt{Autosave Setup} window, select \texttt{Apply} followed by \texttt{OK} to close the window.
-		
-		\item In the \texttt{Camera Control} window, select \texttt{Start} to begin taking data.
-		
-	\end{enumerate}
-	
-	\subsection{Set up data log}
-	
-	\begin{enumerate}
-		
-		\item In a web browser, navigate to the \href{https://docs.google.com/spreadsheets/d/1-flrFYcHwpuXavXAMwkF41ibTWqWWC0Sgsv5X402HyY/edit?usp=sharing}{CTMO Data Log}.
-		
-		\item Create a new entry and follow previous examples for the proper entry format and syntax.
-		
-	\end{enumerate}
-	
-	\subsection{Monitor observing conditions}
-	
-	\begin{enumerate}
-		
-		\item Weather and sky coverage should be a priority, since this directly affects the data stream and could pose risks to the telescope and dome.
-		
-		\item Make sure the dome shutter window remains in line with the telescope pointing. At the time of writing, the dome rotation has not been integrated into the telescope motion.
-		
-		\item Make sure the data is being saved in the correct directory and recorded in the data log.
-		
-	\end{enumerate}
-	
-	\subsection{Take calibration frames}
-	
-	\subsubsection{Flat frames}
-	
-	\begin{enumerate}
-		
-		\item Make sure the area around the telescope is completely clear.
-		
-		\item In PWI4, select \texttt{Commands} and then click \texttt{Home Mount}. The telescope will slew and locate its reference encoders.
-		
-		\item In PWI4, under the \texttt{Goto} tab, enter the right altitude and azimuth of the flatfield screen. Use an azimuth of 352 degrees and an altitude of 12 degrees. You will then need to slew the dome to center the flatfield screen in the telescope FOV.
-		
-		\item Connect the dimmer switch plug and press the dimmer switch knob to click it on. Next, turn the dimmer switch to produce some light and take a test exposure. This process will be iterative until the appropriate level is reached. The average pixel value across the frame should be roughly 50\% the saturation limit of the camera. For a 16-bit camera like the ProLine 16803, the saturation limit is 65535 counts.
-		
-		\item Take a series of at least 15 flats per filter used that night.
-		
-	\end{enumerate}
-
-	\subsubsection{Dark frames}
-	
-	\begin{enumerate}
-		
-		\item Turn off lights and take a series of 15 dark frames. For each integration time used in an observation (including those of your flats), a series of 15 darks per integration time will be needed.
-		
-	\end{enumerate}
-
-	\subsubsection{Bias frames}
-	
-	\begin{enumerate}
-		
-		\item Keep the lights off and take a series of 25 bias frames.
-		
-	\end{enumerate}
-	
-	\newpage
-	\section{Shutting Down}
-	
-	\subsection{Disconnect from mount}
-	
-	\begin{enumerate}
-		
-		\item Make sure the area around the telescope is completely clear.
-		
-		\item In PWI4, select \texttt{Commands} and then click \texttt{Home Mount}. The telescope will slew and locate its reference encoders.
-		
-		\item In PWI3, select \texttt{Disconnect} at the top right of the window to turn off the OTA fans.
-		
-		\item Close PWI3 and PWI4.
-		
-		\item If you used ASCOM, disconnect \texttt{Telescope}, \texttt{Dome}, and \texttt{Focuser}. Close ASCOM.
-		
-		\item Turn off the mount.
-		
-	\end{enumerate}
-
-	\subsection{Disconnect from filter wheel}
-	
-	\begin{enumerate}
-		
-		\item Close FLIFilter.
-		
-	\end{enumerate}
-	
-	\subsection{Disconnect from camera}
-	
-	\begin{enumerate}
-		
-		\item In MaxIm DL, in the \texttt{Camera Control Window}, select \texttt{Setup} and then \texttt{Warm Up} to begin warming up the camera.
-		
-		\item Wait until the cooler power has dropped to close to 0\% and the temperature of the chip is close to the ambient temperature. This might take a while, therefore you may continue with shutting down the rest of the observatory (up to, but not including, turning off the UPS battery backup) and then come back to this point.
-		
-		\item Select \texttt{Off} under \texttt{Setup} to turn off the camera cooler.
-		
-		\item Select \texttt{Disconnect} and then close MaxIm DL.
-		
-		\item Shut down the computer (allow for updates before shutting off power). Turn off the monitors.
-		
-	\end{enumerate}
-	
-	\subsection{Cover telescope}
-	
-	\begin{enumerate}
-		
-		\item Slide the light shroud up toward the front of the OTA.
-		
-		\item Replace the round plastic lid onto the primary aperture.
-		
-		\item Replace the plastic shower cap and use clips to fasten it.
-		
-		\item Replace the cloth cover onto the secondary mirror.
-		
-		\item Slide the light shroud back down to completely enclose the OTA.
-		
-	\end{enumerate}
-	
-	\subsection{Close shutter door}
-	
-	\begin{enumerate}
-		
-		\item Pull the door back up to its original position.
-		
-		\item Wrap the rope completely around the handle, making sure the door remains flush against the dome (even with a decent push). Tie the rope into a knot to keep it secure.
-		
-	\end{enumerate}
-	
-	\subsection{Close shutter window}
-	
-	\begin{enumerate}
-		
-		\item Press and hold \texttt{CLOSE} on the shutter controller (the one with a plastic cover). Close the shutter until the shutter door automatically stops.
-
-		\item Place the charger on the wall. Connect the charger to the battery.
-		
-		\item First connect the BLACK lead to the BLACK (-) terminal on the battery. Then connect the RED lead to the RED (-) terminal on the battery.
-		
-	\end{enumerate}
-	
-	\subsection{Power Down and Exit}
-	
-	\begin{enumerate}
-		
-		\item Turn off the AC unit in the control room.
-		
-		\item Turn off the UPS battery backup. Press and hold the center power button until you hear it beep.
-		
-		\item Turn off circuits breakers. Breakers 2, 5, 7, and 11 should always remain ON.
-		
-		\item Turn off the lights, both inside and outside the control room, and shut the control room door.
-		
-		\item Exit the dome and replace the padlocks on the hatch.
-		
-		\item Message the team that the dome has been closed.
-		
-	\end{enumerate}
+	\end{enumerate}	
 	
 \end{document}
