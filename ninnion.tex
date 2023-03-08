@@ -18,7 +18,7 @@
 \title{Ninnion: The Observer's Operation Manual}
 \author{Cristina Torres Memorial Observatory \\
 	Brownsville, Texas}
-\date{v 7 Feb 2023}
+\date{v 8 Mar 2023}
 
 % Initial version: 3 Jul 2019
 
@@ -47,21 +47,7 @@
 		
 		\item Check sunset. It is advised that you choose the beginning of your critical scientific data run to be no earlier than astronomical twilight. Astronomical twilight occurs when the Sun is 18 degrees below the local horizon. In Brownsville, during the summer, astronomical twilight occurs roughly 1.5 hours after sunset. You can certainly observe before this time, during civil or nautical twilight, but extinction by sunlight will be much more significant. See Figure \ref{fig:twilight}.
 		
-		\begin{figure}[htbp!]
-			\centering
-			\includegraphics[scale=0.5]{images/twilight-phases-dusk.png}
-			\caption{The definition of dusk (or twilight) depending on the altitude of the Sun below the local horizon.}
-			\label{fig:twilight}
-		\end{figure}
-		
 		\item Check forecast. Visit the \href{https://www.weather.gov}{National Weather Service}. See Figure \ref{fig:nws}.
-		
-		\begin{figure}[htbp!]
-			\centering
-			\includegraphics[scale=0.3]{images/nws.png}
-			\caption{The home page of the National Weather Service.}
-			\label{fig:nws}
-		\end{figure}
 		
 		\begin{enumerate}
 			
@@ -69,30 +55,9 @@
 			
 			\item Scroll down the new page to the section titled \texttt{Detailed Forecast}. See Figure \ref{fig:forecast}.
 			
-			\begin{figure}[htbp!]
-				\centering
-				\includegraphics[scale=0.3]{images/detailed_forecast.png}
-				\caption{The detailed forecast of the default location selected for Olmito, TX.}
-				\label{fig:forecast}
-			\end{figure}
-			
 			\item To the right of this you will see a map. There will be a green square on the map already, but ignore it for now. Find the approximate location of the observatory and click it on the map. Wait for the page to reload. You should see the green square highlighting the region you just clicked. See Figure \ref{fig:position}.
 			
-			\begin{figure}[htbp!]
-				\centering
-				\includegraphics[scale=0.5]{images/green_square.png}
-				\caption{The green square after the page reloads, indicating the correct position has been selected.}
-				\label{fig:position}
-			\end{figure}
-			
 			\item Immediately below this, click the graph titled \texttt{Hourly Weather Forecast}. This action takes you to a new page with the forecast in graphical form of the location you clicked. See Figure \ref{fig:graphical}. This page is extremely useful and it is recommended to bookmark this page for future reference. You will want to monitor the changing conditions throughout the day before your observation. Typically, 50\% or greater cloud coverage is a sign that an observation is a no-go.
-			
-			\begin{figure}[htbp!]
-				\centering
-				\includegraphics[scale=0.5]{images/graph.png}
-				\caption{The graphical forecast at the location of the observatory.}
-				\label{fig:graphical}
-			\end{figure}
 			
 		\end{enumerate}
 		
@@ -171,7 +136,7 @@
 		
 		\item Turn on the UPS battery backup. This is the slim, tall box on the table to the immediate left of the breaker box. Turn it on using the center power button. After a beep and some warming up, the information screen should indicate the battery is running on the power line rather than on the battery.
 		
-		\item In the control room, turn on the AC unit. 
+		\item In the control room, turn on the A/C unit using the black remote mounted on the wall. The A/C unit works as both an air conditioner and a heater. Press the \texttt{Mode} button on the remote, and you will be able to see on the left side of the display that the remote is cycling through its settings. The heater light will display red on the A/C unit as confirmation if you chose the heater mode. You adjust the temperature regardless of mode by clicking the up and down buttons on the remote. Note: For the heater, it will not kick on immediately. Give the heater about five minutes to warm up.
 		
 		\item Turn on Atlas. First, you need to toggle the power switch on the back of the computer. GRUB should automatically boot Windows.
 		
@@ -242,7 +207,7 @@
 		
 		\item Connect to the camera. Under \texttt{View}, open the \texttt{Camera Control Window}. Select \texttt{Setup} and then \texttt{Connect} to enable computer connection to the camera.
 		
-		\item Cool the camera. Click \texttt{Cooler} and enter the set point. It is advisable to limit the initial set point to no more than 40 degrees C relative to the ambient temperature to avoid over-straining the thermoelectric coolers. (For example, if the ambient temperature is 30 degrees C, then the set point should be about -10 degrees C.)
+		\item Cool the camera. Click \texttt{Cooler} and enter the set point. It is advisable to limit the initial set point to no more than 40 degrees C relative to the ambient temperature to avoid over-straining the thermoelectric coolers. For example, if the ambient temperature is 30 degrees C, then the set point should be about -10 degrees C.
 		
 		\item Under \texttt{Connect} select \texttt{On} to begin cooling the camera. The cooler power should not exceed 80\% during stable operation (although the power might exceed this during the cooling phase).
 		
@@ -290,6 +255,15 @@
 		\item In PWI4, under the \texttt{Goto} tab, enter the right ascension and declination of your intended object. Make sure the format is either sexagesimal (\texttt{hh:mm:ss.ssss} and \texttt{$\pm$dd:mm:ss.ssss}) or decimal (\texttt{dd.dddd} and \texttt{$\pm$dd.dddd}).
 		
 	\end{enumerate}
+
+	\subsection{Rotate dome}
+	\label{sec:rotate-dome}
+	
+	\begin{enumerate}
+		
+		\item Using the uncovered remote, press the \texttt{West} button to rotate the dome window to the desired position. Due to current limitations with the dome, the \texttt{East} button should not be used.
+		
+	\end{enumerate}
 	
 	\subsection{Take test exposure}
 	\label{sec:take-test-exposure}
@@ -324,13 +298,6 @@
 		\item Under the newly-made directory, create a directory called \texttt{dark}, a directory called \texttt{flat}, and a directory for each of your targets by name (e.g. for target exoplanet system HAT-P-7 the directory would be something like \texttt{hatp7}). See Figure~\ref{fig:directory}.
 		
 	\end{enumerate}
-	
-	\begin{figure}[htbp!]
-		\centering
-		\includegraphics[scale=0.5]{images/ctmo_format.png}
-		\caption{The directory structure for CTMO data. The object file names should be a single, unbroken string of the object's name. The (g, 100) and (i, 10) are the filters and exposure time used for that particular object (you don't need to include this in the file name).}
-		\label{fig:directory}
-	\end{figure}
 	
 	\subsection{Set up autosave routine}
 	\label{sec:set-up-autosave-routine}
@@ -525,8 +492,10 @@
 	\end{enumerate}
 
 	\newpage
+
+	\newpage
 	\appendix
-		
+	
 	\section{Set up ASCOM}
 	\label{sec:set-up-ascom}
 	
@@ -565,5 +534,212 @@
 		\item Go to \hyperref[sec:take-test-exposure]{Section 3.2, Step 8} to test if ASCOM is running. 
 		
 	\end{enumerate}	
+	
+	\newpage
+	\section{Figures}
+	\label{sec:figures}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.5]{images/twilight-phases-dusk.png}
+		\caption{The definition of dusk (or twilight) depending on the altitude of the Sun below the local horizon.}
+		\label{fig:twilight}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.3]{images/nws.png}
+		\caption{The home page of the National Weather Service.}
+		\label{fig:nws}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.3]{images/detailed_forecast.png}
+		\caption{The detailed forecast of the default location selected for Olmito, TX.}
+		\label{fig:forecast}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.5]{images/green_square.png}
+		\caption{The green square after the page reloads, indicating the correct position has been selected.}
+		\label{fig:position}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.5]{images/graph.png}
+		\caption{The graphical forecast at the location of the observatory.}
+		\label{fig:graphical}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[angle=270, scale=0.05]{images/circuits.png}
+		\caption{Caption.}
+		\label{fig:circuits}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[angle=270, scale=0.05]{images/ups_backup.png}
+		\caption{Caption.}
+		\label{fig:ups}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.1]{images/ac.png}
+		\caption{Caption.}
+		\label{fig:ac}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[angle=270, scale=0.05]{images/ac_remote.png}
+		\caption{Caption.}
+		\label{fig:ac_remote}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[angle=270, scale=0.05]{images/remote_shutter.png}
+		\caption{Caption.}
+		\label{fig:remote_shutter}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[angle=270, scale=0.05]{images/mount_switch.png}
+		\caption{Caption.}
+		\label{fig:mount_switch}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.25]{images/pwi3-1.png}
+		\caption{Caption.}
+		\label{fig:pwi3-1}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.75]{images/pwi3-2.png}
+		\caption{Caption.}
+		\label{fig:pwi3-2}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.75]{images/pwi3-3.png}
+		\caption{Caption.}
+		\label{fig:pwi3-4}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.25]{images/maxim-1.png}
+		\caption{Caption.}
+		\label{fig:maxim-1}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.75]{images/maxim-2.png}
+		\caption{Caption.}
+		\label{fig:maxim-2}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.75]{images/maxim-3.png}
+		\caption{Caption.}
+		\label{fig:maxim-3}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.75]{images/maxim-4.png}
+		\caption{Caption.}
+		\label{fig:maxim-4}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.75]{images/maxim-5.png}
+		\caption{Caption.}
+		\label{fig:maxim-5}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.25]{images/maxim-6.png}
+		\caption{Caption.}
+		\label{fig:maxim-6}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=1]{images/flifilter-1.png}
+		\caption{Caption.}
+		\label{fig:flifilter-1}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=1]{images/flifilter-2.png}
+		\caption{Caption.}
+		\label{fig:flifilter-2}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.25]{images/pwi4-1.png}
+		\caption{Caption.}
+		\label{fig:pwi4-1}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.25]{images/pwi4-2.png}
+		\caption{Caption.}
+		\label{fig:pwi4-2}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.25]{images/pwi4-3.png}
+		\caption{Caption.}
+		\label{fig:pwi4-3}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.75]{images/pwi4-4.png}
+		\caption{Caption.}
+		\label{fig:pwi4-4}
+	\end{figure}
+
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[angle=270, scale=0.05]{images/remote_dome.png}
+		\caption{Caption.}
+		\label{fig:remote_dome}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.6]{images/pwi3-3.png}
+		\caption{Caption.}
+		\label{fig:pwi3-3}
+	\end{figure}
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[scale=0.5]{images/ctmo_format.png}
+		\caption{The directory structure for CTMO data. The object file names should be a single, unbroken string of the object's name. The (g, 100) and (i, 10) are the filters and exposure time used for that particular object (you don't need to include this in the file name).}
+		\label{fig:directory}
+	\end{figure}
 	
 \end{document}
