@@ -226,6 +226,8 @@
 		
 		\item If you click \texttt{CW} or \texttt{CCW}, you will have to re-home the filter wheel before selecting another one.
 		
+		\item You might have to manually jog the filter wheel after selecting a new filter by using the \texttt{CW} or \texttt{CCW} buttons. Make sure to re-home the filter wheel before selecting another filter.
+		
 	\end{enumerate}
 	
 	\subsection{Connect to mount}
@@ -319,15 +321,15 @@
 		\item In the \texttt{Camera Control} window, select \texttt{Start} to begin taking data.
 		
 	\end{enumerate}
-	
-	\subsection{Set up data log}
-	\label{sec:set-up-data-log}
+
+	\subsection{Set up observer log}
+	\label{sec:set-up-observer-log}
 	
 	\begin{enumerate}
 		
-		\item In a web browser, navigate to the \href{https://docs.google.com/spreadsheets/d/1-flrFYcHwpuXavXAMwkF41ibTWqWWC0Sgsv5X402HyY/edit?usp=sharing}{CTMO Data Log}.
+		\item In a web browser, navigate to the \href{https://forms.office.com/pages/responsepage.aspx?id=pjYEmd-HHEmRJJr6kfiIJ6_-JTSTSFFHivQ4LTyBzxRUNjk5SEFNSkY1QzA2UlMwVUdUR1ROUVpCSS4u}{Observer's Journal}.
 		
-		\item Create a new entry and follow previous examples for the proper entry format and syntax.
+		\item Create a new entry and submit a completed form by the end of the observation.
 		
 	\end{enumerate}
 	
@@ -372,15 +374,6 @@
 		\item Turn off lights and take a series of 15 dark frames. For each integration time used in an observation (including those of your flats), a series of 15 darks per integration time will be needed.
 		
 	\end{enumerate}
-
-	\subsubsection{Bias frames}
-	\label{sec:bias-frames}
-	
-	\begin{enumerate}
-		
-		\item Keep the lights off and take a series of 25 bias frames.
-		
-	\end{enumerate}
 	
 	\newpage
 	\section{Shutting Down}
@@ -395,13 +388,19 @@
 		
 		\item In PWI4, select \texttt{Commands} and then click \texttt{Home Mount}. The telescope will slew and locate its reference encoders.
 		
-		\item In PWI3, select \texttt{Disconnect} at the top right of the window to turn off the OTA fans.
-		
-		\item Close PWI3 and PWI4.
+		\item Close PWI4.
 		
 		\item If you used ASCOM (see \hyperref[sec:set-up-ascom]{Appendix A}), disconnect \texttt{Telescope}, \texttt{Dome}, and \texttt{Focuser}. Close ASCOM.
 		
-		\item Turn off the mount.
+	\end{enumerate}
+
+	\subsection{Disconnect from EFA kit}
+	
+	\begin{enumerate}
+	
+		\item In PWI3, select \texttt{Disconnect} at the top right of the window to turn off the OTA fans.
+		
+		\item Close PWI3.
 		
 	\end{enumerate}
 
@@ -410,6 +409,8 @@
 	
 	\begin{enumerate}
 		
+		\item Home the filter wheel.
+				
 		\item Close FLIFilter.
 		
 	\end{enumerate}
@@ -435,6 +436,8 @@
 	\label{sec:cover-telescope}
 	
 	\begin{enumerate}
+		
+		\item Turn off the mount.
 		
 		\item Slide the light shroud up toward the front of the OTA.
 		
@@ -472,7 +475,7 @@
 		
 	\end{enumerate}
 	
-	\subsection{Power Down and Exit}
+	\subsection{Power down and exit}
 	\label{sec:power-down-and-exit}
 	
 	\begin{enumerate}
@@ -531,7 +534,7 @@
 		
 		\item Here we can compare the focuser position given by MaxIM DL to that given by PWI3. Focusing corrections can be made by reading the MaxIm position and moving the focus status position in PWI3.
 		
-		\item Go to \hyperref[sec:take-test-exposure]{Section 3.2, Step 8} to test if ASCOM is running. 
+		\item Go to \hyperref[sec:take-test-exposure]{Section 3.3, Step 8} to test if ASCOM is running. 
 		
 	\end{enumerate}	
 	
